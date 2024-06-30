@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>《药理学》 (人民卫生出版社)</title>
+    <link rel="stylesheet" href="static/pdfjs/web/viewer.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #pdfViewer {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <h1>《药理学》 (人民卫生出版社)</h1>
-    
-    <!-- 下载链接 -->
-    <p>
-        <a href="root_directory\g3\《药理学》_(人民卫生出版社)\药理学_第9版_(杨宝峰,_陈建国,_主编)_(Z-Library).pdf" download>下载 PDF 文件</a>
-    </p>
-
-    <!-- 预览 iframe -->
-    <iframe src="root_directory\g3\《药理学》_(人民卫生出版社)\药理学_第9版_(杨宝峰,_陈建国,_主编)_(Z-Library).pdf" width="100%" height="800px" onerror="this.style.display='none';">
-        <p>无法显示 PDF 文件，您可以通过以下链接下载：</p>
-        <a href="root_directory\g3\《药理学》_(人民卫生出版社)\药理学_第9版_(杨宝峰,_陈建国,_主编)_(Z-Library).pdf">下载 PDF 文件</a>
-    </iframe>
-
+    <iframe id="pdfViewer" src="static/pdfjs/web/viewer.html?file=root_directory\g3\《药理学》_(人民卫生出版社)\药理学_第9版_(杨宝峰,_陈建国,_主编)_(Z-Library).pdf" frameborder="0"></iframe>
     <br>
     <a href="category_g3.html">返回 三级资料 目录</a>
+    <script type="module">
+        import { PDFViewerApplication } from './static/pdfjs/build/pdf.mjs';
+
+        // 调用 PDF.js 应用程序的初始化函数
+        PDFViewerApplication.run({
+            url: 'root_directory\g3\《药理学》_(人民卫生出版社)\药理学_第9版_(杨宝峰,_陈建国,_主编)_(Z-Library).pdf'
+        });
+    </script>
 </body>
 </html>
